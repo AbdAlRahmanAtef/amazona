@@ -32,16 +32,19 @@ const Placeorder = () => {
   const placeOrderHandler = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post("http://localhost:5000/orders", {
-        userId: user?._id,
-        orderItems,
-        shippingAddress,
-        paymentMethod,
-        itemsPrice: totalPrice,
-        shippingPrice,
-        taxPrice,
-        totalPrice: finalPrice,
-      });
+      const { data } = await axios.post(
+        "https://amazona-3yua.onrender.com/orders",
+        {
+          userId: user?._id,
+          orderItems,
+          shippingAddress,
+          paymentMethod,
+          itemsPrice: totalPrice,
+          shippingPrice,
+          taxPrice,
+          totalPrice: finalPrice,
+        }
+      );
 
       setIsLoading(false);
 

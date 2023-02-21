@@ -19,10 +19,13 @@ const Login = () => {
   const submitHandler = async ({ firstName, lastName, email, password }) => {
     if (isLogin) {
       try {
-        const { data } = await axios.post("http://localhost:5000/auth/login", {
-          email,
-          password,
-        });
+        const { data } = await axios.post(
+          "https://amazona-3yua.onrender.com/auth/login",
+          {
+            email,
+            password,
+          }
+        );
 
         dispatch(setUser({ user: data.user, token: data.token }));
 
@@ -33,7 +36,7 @@ const Login = () => {
     } else {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/auth/register",
+          "https://amazona-3yua.onrender.com/auth/register",
           {
             firstName,
             lastName,

@@ -22,7 +22,7 @@ const Dashboard = ({ data }) => {
       setLoading(true);
 
       const { data } = await axios.delete(
-        `http://localhost:5000/products/${currentId}/delete`
+        `https://amazona-3yua.onrender.com/products/${currentId}/delete`
       );
 
       setProducts(data);
@@ -99,7 +99,9 @@ const Dashboard = ({ data }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:5000/products");
+  const { data } = await axios.get(
+    "https://amazona-3yua.onrender.com/products"
+  );
   return {
     props: {
       data,

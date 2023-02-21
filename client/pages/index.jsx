@@ -1,6 +1,5 @@
 import axios from "axios";
 import Product from "components/Product";
-import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -39,7 +38,9 @@ const Home = ({ products }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:5000/products");
+  const { data } = await axios.get(
+    "https://amazona-3yua.onrender.com/products"
+  );
   return {
     props: {
       products: data,

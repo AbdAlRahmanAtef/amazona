@@ -64,7 +64,9 @@ const Product = ({ product }) => {
 };
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = await axios.get(`http://localhost:5000/products/${id}`);
+  const { data } = await axios.get(
+    `https://amazona-3yua.onrender.com/products/${id}`
+  );
 
   return {
     props: {

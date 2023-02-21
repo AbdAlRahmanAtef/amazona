@@ -25,7 +25,7 @@ const ProductPage = ({ product }) => {
       setLoading(true);
 
       const { data } = await axios.patch(
-        "http://localhost:5000/products/update",
+        "https://amazona-3yua.onrender.com/products/update",
         formData
       );
       setLoading(false);
@@ -54,7 +54,9 @@ const ProductPage = ({ product }) => {
 };
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = await axios.get(`http://localhost:5000/products/${id}`);
+  const { data } = await axios.get(
+    `https://amazona-3yua.onrender.com/products/${id}`
+  );
 
   return {
     props: {

@@ -36,7 +36,7 @@ const AddProduct = () => {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5000/products",
+        "https://amazona-3yua.onrender.com/products",
         formData
       );
       console.log({ data });

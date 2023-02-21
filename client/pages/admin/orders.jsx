@@ -63,7 +63,7 @@ const Orders = ({ orders }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("http://localhost:5000/orders");
+  const { data } = await axios.get("https://amazona-3yua.onrender.com/orders");
 
   return {
     props: {

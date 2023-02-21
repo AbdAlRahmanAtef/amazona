@@ -60,7 +60,7 @@ const Order = ({ order }) => {
       try {
         setLoading(true);
         const { data } = await axios.put(
-          `http://localhost:5000/orders/${order._id}/pay`,
+          `https://amazona-3yua.onrender.com/orders/${order._id}/pay`,
           details
         );
 
@@ -78,7 +78,7 @@ const Order = ({ order }) => {
 
   const handleDeliverOrder = async () => {
     const { data } = await axios.patch(
-      `http://localhost:5000/orders/${order._id}/deliver`
+      `https://amazona-3yua.onrender.com/orders/${order._id}/deliver`
     );
 
     toast.success("Order delivered successfully");
@@ -222,7 +222,9 @@ const Order = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params: { id } }) => {
-  const { data } = await axios.get(`http://localhost:5000/orders/${id}`);
+  const { data } = await axios.get(
+    `https://amazona-3yua.onrender.com/orders/${id}`
+  );
 
   return {
     props: {
