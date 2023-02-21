@@ -57,9 +57,9 @@ const Form = ({
           <input
             onChange={(e) => setFileToBase(e, "image")}
             placeholder={loading ? "loading..." : "select Image"}
-            hidden
             type="file"
             id="image"
+            hidden
             className="flex flex-col items-center justify-center p-5 border-[2px] h-[100px] border-dashed bg-[#fafafa] text-[#bdbdbd] outline-none transition-border duration-300 cursor-pointer focus:border-[#2196f3] hover: border-[#2196f3]"
           />
         </div>

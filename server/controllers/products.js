@@ -1,11 +1,13 @@
 import Product from "../models/Product.js";
-// import cloudinary from "../utils/cloudinary.js";
 import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 cloudinary.config({
-  cloud_name: "de7em4ynt",
-  api_key: "272322984491772",
-  api_secret: "W2AQLnWDps7TXrUbNCn8svfnE7g",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 /* CREATE */
