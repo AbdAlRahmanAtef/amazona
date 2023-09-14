@@ -9,10 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "styles/globals.css";
 import Layout from "components/Layout";
 import Auth from "components/Auth";
+import axios from "axios";
 
 const App = ({ Component, pageProps }) => {
   const [isSSR, setIsSSR] = useState(true);
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setIsSSR(false);
