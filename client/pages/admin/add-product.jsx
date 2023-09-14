@@ -36,7 +36,7 @@ const AddProduct = () => {
       setLoading(true);
 
       const { data } = await axios.post(
-        "https://amazona-3yua.onrender.com/products",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
         formData
       );
       console.log({ data });

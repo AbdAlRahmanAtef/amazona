@@ -20,7 +20,7 @@ const Users = ({ data }) => {
     setLoading(true);
     console.log(formData);
     const { data } = await axios.patch(
-      `https://amazona-3yua.onrender.com/users/update/${formData._id}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/users/update/${formData._id}`,
       formData
     );
 
@@ -34,7 +34,7 @@ const Users = ({ data }) => {
   const handleDelete = async (id) => {
     setLoading(true);
     const { data } = await axios.delete(
-      `https://amazona-3yua.onrender.com/users/${currentId}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/users/${currentId}`
     );
 
     setUsers(data.users);
@@ -128,7 +128,7 @@ const Users = ({ data }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get("https://amazona-3yua.onrender.com/users");
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/users`);
 
   return {
     props: {

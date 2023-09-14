@@ -12,7 +12,7 @@ const OrderHistory = () => {
 
   const getOrderHistory = async () => {
     const { data } = await axios.get(
-      `https://amazona-3yua.onrender.com/orders/history/${_id}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/history/${_id}`
     );
     setOrders(data);
   };

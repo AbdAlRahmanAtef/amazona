@@ -48,7 +48,7 @@ const Search = () => {
 
   const getCategories = async () => {
     const { data } = await axios.get(
-      "https://amazona-3yua.onrender.com/products/categories"
+      `${process.env.NEXT_PUBLIC_BASE_URL}/products/categories`
     );
 
     setCategories(data);
@@ -58,7 +58,7 @@ const Search = () => {
     setLoading(true);
 
     const { data } = await axios.get(
-      `https://amazona-3yua.onrender.com/products/search?query=${query}&category=${category}&brand=${brand}&price=${price}&rating=${rating}&page=${page}&sort=${sortMethod}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/products/search?query=${query}&category=${category}&brand=${brand}&price=${price}&rating=${rating}&page=${page}&sort=${sortMethod}`
     );
 
     setProducts(data.products);

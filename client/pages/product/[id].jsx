@@ -65,7 +65,7 @@ const Product = ({ product }) => {
 
 export const getServerSideProps = async ({ params: { id } }) => {
   const { data } = await axios.get(
-    `https://amazona-3yua.onrender.com/products/${id}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/products/${id}`
   );
 
   return {

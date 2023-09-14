@@ -20,7 +20,7 @@ const Login = () => {
     if (isLogin) {
       try {
         const { data } = await axios.post(
-          "https://amazona-3yua.onrender.com/auth/login",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,
           {
             email,
             password,
@@ -36,7 +36,7 @@ const Login = () => {
     } else {
       try {
         const { data } = await axios.post(
-          "https://amazona-3yua.onrender.com/auth/register",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/register`,
           {
             firstName,
             lastName,

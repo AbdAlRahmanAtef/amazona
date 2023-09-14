@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Home = ({ products }) => {
+  console.log(process.env.NEXT_PUBLIC_BASE_URL);
   if (!products.length) return "Loading...";
   const featuredProducts = products.filter((product) => product.isFeatured);
   console.log({ featuredProducts });
@@ -39,7 +40,7 @@ const Home = ({ products }) => {
 
 export const getServerSideProps = async () => {
   const { data } = await axios.get(
-    "https://amazona-3yua.onrender.com/products"
+    `${process.env.NEXT_PUBLIC_BASE_URL}/products`
   );
   return {
     props: {

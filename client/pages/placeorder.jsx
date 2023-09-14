@@ -33,7 +33,7 @@ const Placeorder = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.post(
-        "https://amazona-3yua.onrender.com/orders",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/orders`,
         {
           userId: user?._id,
           orderItems,

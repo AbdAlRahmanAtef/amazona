@@ -60,7 +60,7 @@ const Order = ({ order }) => {
       try {
         setLoading(true);
         const { data } = await axios.put(
-          `https://amazona-3yua.onrender.com/orders/${order._id}/pay`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/orders/${order._id}/pay`,
           details
         );
 
@@ -78,7 +78,7 @@ const Order = ({ order }) => {
 
   const handleDeliverOrder = async () => {
     const { data } = await axios.patch(
-      `https://amazona-3yua.onrender.com/orders/${order._id}/deliver`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/orders/${order._id}/deliver`
     );
 
     toast.success("Order delivered successfully");
@@ -223,7 +223,7 @@ const Order = ({ order }) => {
 
 export const getServerSideProps = async ({ params: { id } }) => {
   const { data } = await axios.get(
-    `https://amazona-3yua.onrender.com/orders/${id}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/orders/${id}`
   );
 
   return {
